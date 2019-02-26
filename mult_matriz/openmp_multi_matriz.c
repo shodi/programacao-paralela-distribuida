@@ -83,6 +83,7 @@ int main(int argc, char **argv) {
     matrix1 = generate_matrix(5, 5, 1);
     matrix2 = generate_matrix(5, 5, 1);
     result = multiply(matrix1, matrix2);
+    if (result == NULL) return 1;
     print_matrix(result);
     destroy(matrix1);
     destroy(matrix2);
