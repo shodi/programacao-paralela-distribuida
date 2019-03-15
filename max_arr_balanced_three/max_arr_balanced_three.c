@@ -3,7 +3,9 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define ARR_SIZE 4
+#define ARR_SIZE 8 /* Necessariamente potencia de 2 */
+
+// gcc max_arr_balanced_three.c -o teste -fopenmp -lm
 
 int* generate_array(size_t size) {
     int* arr = (int *) malloc(size * sizeof(int));
@@ -44,7 +46,7 @@ int get_max_array(int* array) {
     }
 
     register int j, w;
-    for (j = (int)log(ARR_SIZE); j >= (int)0; j--) {
+    for (j = (int)log(ARR_SIZE); j >= 0; j--) {
         int x = (int)pow(2, j);
         int y = (int)pow(2, j + 1);
         #pragma omp parallel
