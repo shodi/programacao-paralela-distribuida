@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
     srand(time(0));
     primeira = generate_matrix(MATRIX_DIMENSION, MATRIX_DIMENSION, 1);
     segunda = generate_matrix(MATRIX_DIMENSION, MATRIX_DIMENSION, 1);
-    soma = generate_matrix(MATRIX_DIMENSION, MATRIX_DIMENSION, 0);
+    result = generate_matrix(MATRIX_DIMENSION, MATRIX_DIMENSION, 0);
     pthread_t threads[MAX_THREAD];
     int threads_index[MAX_THREAD];
 
@@ -50,11 +50,11 @@ int main(int argc, char **argv) {
         pthread_join(threads[i], NULL);
     }
 
-    print_matrix(soma);
+    print_matrix(result);
 
     destroy(primeira);
     destroy(segunda);
-    destroy(soma);
+    destroy(result);
 
     return 0;
 
