@@ -7,6 +7,17 @@
 
 // gcc max_arr_balanced_three.c -o teste -fopenmp -lm
 
+/**
+***   Algoritmo para determinar, paralelamente, o maior elemento de uma lista.
+***
+***   Eficiente pois é executado em tempo polilogaritmico em relação à entrada.
+***   Além disso, possui complexidade de processadores polinomial, fazendo com que
+***   seu custo seja n * log n, onde n é o tamanho da entrada.
+***
+***   Tal algorítmo não é ótimo pois o mesmo valor é o obtido em complexidade de tempo
+***   O(n) em um algorítmo sequencial
+**/
+
 int* generate_array(size_t size) {
     int* arr = (int *) malloc(size * sizeof(int));
     register unsigned int i = 0;
